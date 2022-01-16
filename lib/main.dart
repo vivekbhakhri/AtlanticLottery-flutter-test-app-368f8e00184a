@@ -1,8 +1,12 @@
+import 'dart:convert';
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 import 'screens/mars_screen.dart';
 import 'screens/planet_listing_screen.dart';
 import 'screens/webview_screen.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(ALCTestApp());
@@ -26,6 +30,8 @@ class HomeWidget extends StatefulWidget {
 
   @override
   State<HomeWidget> createState() => _HomeWidgetState();
+
+
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
@@ -38,9 +44,11 @@ class _HomeWidgetState extends State<HomeWidget> {
     WebviewScreen(),
   ];
 
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      print('on tapp');
     });
   }
 
@@ -50,8 +58,10 @@ class _HomeWidgetState extends State<HomeWidget> {
       appBar: AppBar(
         title: const Text('ALC Mobile Test App'),
       ),
-      body: Center(
-        child: _screenOptions.elementAt(_selectedIndex),
+      body: Container(
+        child: Center(
+          child:_screenOptions.elementAt(_selectedIndex),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
