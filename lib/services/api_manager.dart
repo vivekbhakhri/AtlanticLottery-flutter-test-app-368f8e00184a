@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter_application_1/services/services.dart';
 import 'package:http/http.dart' as http;
 
-class API_Manager {
+class APIManager {
   Future<PlanetData> getData() async {
     var client = http.Client();
     dynamic planetData;
@@ -20,6 +20,4 @@ class API_Manager {
 
     return planetData;
   }
-
-
 }
