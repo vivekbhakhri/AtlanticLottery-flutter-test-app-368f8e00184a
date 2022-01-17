@@ -21,7 +21,6 @@ class _MarsScreenState extends State<MarsScreen> {
   bool isVisible = false;
 
   Widget build(BuildContext context) {
-    print('marsBuild');
     return Container(
       child: ListView(
         children: [
@@ -47,7 +46,8 @@ class _MarsScreenState extends State<MarsScreen> {
                       child: Column(
                         children: <Widget>[
                           Image.network(data!.imageThumbnail!.toString()),
-                          if (isVisible) Text(data.planetName!.toString()),
+                          Text(data.planetName!.toString()),
+                          if (isVisible) Text((data.extra!.distanceToSun! - (data.extra!.distanceToSun! - data.extra!.distanceToEarth!)).toString()),
                           TextButton(
                               onPressed: () {
                                 setState(() {

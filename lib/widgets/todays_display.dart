@@ -32,9 +32,9 @@ class _TodaysDisplayState extends State<TodaysDisplay> {
   }
 
   void _startTimer() {
-    _timer = Timer.periodic(Duration(milliseconds: 200), (timer) {
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
-        show = true;
+        show = !show;
       });
     });
   }
@@ -47,8 +47,8 @@ class _TodaysDisplayState extends State<TodaysDisplay> {
       padding: EdgeInsets.all(20),
       margin: EdgeInsets.only(bottom: 20),
       child: AnimatedOpacity(
-        duration: Duration(seconds: 10),
-        opacity: 1,
+        duration: Duration(seconds: 1),
+        opacity: show ? 1.0 :0.0,
         child: Text(DateFormat('MM-DD-yyyy hh:mm:ss a').format(DateTime.parse(widget.date!))),
       ),
     );

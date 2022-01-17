@@ -18,14 +18,19 @@ class _PlanetListingScreenState extends State<PlanetListingScreen> {
   PlanetListingModel model = PlanetListingModel();
 
 
+  void initState() {
+    model.planetsList.sort((c,d) => d.radius.compareTo(c.radius));
+
+    super.initState();
+  }
+
+
   Widget build(BuildContext context) {
-    const _planet = PlanetListingScreen();
     return Scaffold(
       body: Column(
-        children: [
-          AnimatedOpacity(opacity: 1.0, duration: Duration(milliseconds: 10000),
-          child: TodaysDisplay(date: model.getFormattedDate()),
-          ),
+        children: <Widget>[
+          TodaysDisplay(date: model.getFormattedDate()),
+
 
           Center(
               //E.g. - use ListView.builder & the PlanetDisplay Widget to show the list above!
@@ -35,7 +40,8 @@ class _PlanetListingScreenState extends State<PlanetListingScreen> {
                 itemCount: model.planetsList.length,
                 itemBuilder: (context, itemCount){
                   return ListTile(
-                    title: Text(model.planetsList.sorted()),
+                    title:Text('Name=> ${model.planetsList[itemCount].name} - Radius=> ${model.planetsList[itemCount].radius}'),
+                    //title: Text(model.planetsList.sorted()),
                   );
             })
           ),

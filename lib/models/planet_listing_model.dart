@@ -5,9 +5,8 @@ class PlanetListingModel {
   // 1) Use the following hard coded list below to display data
   // 2) Expand the list below to include additional relevant data
   // 3) Fetch data remotely for the list
-  Planet mercury = new Planet('Mercury', 2439.7);
   List<Planet> planetsList = [
-    mercury,
+    Planet('Mercury', 2439.7),
     Planet('Uranus', 25362),
     Planet('Venus', 6051.8),
     Planet('Saturn', 58232),
@@ -27,7 +26,4 @@ class PlanetListingModel {
     return planets;
   }
 
-  void sorted(){
-    return planetsList = planetsList.sort((a,b) => a.radius.compareTo(b.radius));
-  }
 }
