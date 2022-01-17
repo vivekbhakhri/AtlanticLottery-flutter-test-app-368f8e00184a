@@ -26,13 +26,14 @@ class _MarsScreenState extends State<MarsScreen> {
       child: ListView(
         children: [
           FutureBuilder<PlanetData>(
+
             future: _planetData,
             builder: (BuildContext context, snapshot) {
               var data = snapshot.data;
               switch (snapshot.connectionState) {
                 // Checking connection
                 case ConnectionState.none:
-                  return Text('Press button to start.');
+                  return Text('Try reloading the page');
                 case ConnectionState.active:
                 case ConnectionState.waiting:
                   return Center(child: CircularProgressIndicator());
@@ -41,7 +42,8 @@ class _MarsScreenState extends State<MarsScreen> {
                     return Text('Error: ${snapshot.error}');
                   return Center(
                     child: Container(
-                      height: 1000,
+                      padding: EdgeInsets.all(10),
+
                       child: Column(
                         children: <Widget>[
                           Image.network(data!.imageThumbnail!.toString()),

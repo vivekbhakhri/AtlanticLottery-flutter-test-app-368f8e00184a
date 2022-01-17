@@ -55,7 +55,9 @@ class _HomeWidgetState extends State<HomeWidget> {
       ),
       body: Container(
         child: Center(
-          child:_screenOptions.elementAt(_selectedIndex),
+          child: Hero(tag: 'photo',
+          child:_screenOptions.elementAt(_selectedIndex),)
+
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
