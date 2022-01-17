@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter_application_1/models/planet_model.dart';
 
 class PlanetListingModel {
@@ -15,6 +17,10 @@ class PlanetListingModel {
   String getFormattedDate() {
     DateTime now = DateTime.now();
     return now.toString();
+  }
+
+  void listSort(){
+    return planetsList.sort((c,d) => d.radius.compareTo(c.radius));
   }
 
   bool isSameTimeOfDay(DateTime date1, DateTime date2) {

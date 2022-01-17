@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_application_1/services/services.dart';
+import 'package:flutter_application_1/models/planet_data_model.dart';
 import 'package:http/http.dart' as http;
 
 class APIManager {

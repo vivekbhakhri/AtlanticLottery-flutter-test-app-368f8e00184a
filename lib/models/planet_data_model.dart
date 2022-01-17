@@ -1,8 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_application_1/services/api_manager.dart';
-
-import 'package:http/http.dart' as http;
-
 // To parse this JSON data, do
 //
 //     final planetData = planetDataFromJson(jsonString);

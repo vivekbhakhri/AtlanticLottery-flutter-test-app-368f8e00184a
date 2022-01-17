@@ -19,7 +19,7 @@ class _PlanetListingScreenState extends State<PlanetListingScreen> {
 
 
   void initState() {
-    model.planetsList.sort((c,d) => d.radius.compareTo(c.radius));
+    model.listSort(); //Sorts planetsList in descending order
 
     super.initState();
   }
@@ -41,7 +41,6 @@ class _PlanetListingScreenState extends State<PlanetListingScreen> {
                 itemBuilder: (context, itemCount){
                   return ListTile(
                     title:Text('Name=> ${model.planetsList[itemCount].name} - Radius=> ${model.planetsList[itemCount].radius}'),
-                    //title: Text(model.planetsList.sorted()),
                   );
             })
           ),

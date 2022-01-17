@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/services/api_manager.dart';
-import 'package:flutter_application_1/services/services.dart';
+import 'package:flutter_application_1/models/planet_data_model.dart';
 
 class MarsScreen extends StatefulWidget {
   @override
@@ -46,15 +46,17 @@ class _MarsScreenState extends State<MarsScreen> {
                       child: Column(
                         children: <Widget>[
                           Image.network(data!.imageThumbnail!.toString()),
-                          Text(data.planetName!.toString()),
-                          if (isVisible) Text((data.extra!.distanceToSun! - (data.extra!.distanceToSun! - data.extra!.distanceToEarth!)).toString()),
+                          Text('The name of Planet shown in above image is ${data.planetName!.toString()}'),
+                          if (isVisible) Text(
+                              'The distance of earth from sun is ${(data.extra!.distanceToSun! - (data.extra!.distanceToSun! - data.extra!.distanceToEarth!)).toString()}'
+                          ),
                           TextButton(
                               onPressed: () {
                                 setState(() {
                                   isVisible = !isVisible;
                                 });
                               },
-                              child: Icon(Icons.hide_image)),
+                              child: Icon(Icons.clear)),
                           Text(data.extra!.facts![
                               random.nextInt(data.extra!.facts!.length)]),
                         ],
