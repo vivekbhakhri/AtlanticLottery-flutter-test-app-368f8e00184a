@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -15,6 +13,6 @@ class _WebviewScreenState extends State<WebviewScreen> {
     return WebView(
       initialUrl: 'https://www.alc.ca/content/alc-mobile/en.html',
       javascriptMode: JavascriptMode.disabled,
-    );}
-    }
-
+    );
+  }
+}

@@ -19,17 +19,17 @@ class PlanetListingModel {
     return now.toString();
   }
 
-  void listSort(){
-    return planetsList.sort((c,d) => d.radius.compareTo(c.radius));
+  void listSort() {
+    return planetsList.sort((c, d) => d.radius.compareTo(c.radius));
   }
 
   bool isSameTimeOfDay(DateTime date1, DateTime date2) {
     return date1.hour == date2.hour && date1.minute == date2.minute;
   }
 
-  List<Planet> filterPlanetsByMinRadius(List<Planet> planets, double minRadius) {
+  List<Planet> filterPlanetsByMinRadius(
+      List<Planet> planets, double minRadius) {
     planets.removeWhere((p) => p.radius > minRadius);
     return planets;
   }
-
 }

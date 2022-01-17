@@ -16,7 +16,8 @@ class PlanetDisplay extends StatelessWidget {
       height: 100,
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.black)),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.black)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

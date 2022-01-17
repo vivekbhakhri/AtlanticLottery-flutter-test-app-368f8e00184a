@@ -25,7 +25,6 @@ class _MarsScreenState extends State<MarsScreen> {
       child: ListView(
         children: [
           FutureBuilder<PlanetData>(
-
             future: _planetData,
             builder: (BuildContext context, snapshot) {
               var data = snapshot.data;
@@ -42,14 +41,14 @@ class _MarsScreenState extends State<MarsScreen> {
                   return Center(
                     child: Container(
                       padding: EdgeInsets.all(10),
-
                       child: Column(
                         children: <Widget>[
                           Image.network(data!.imageThumbnail!.toString()),
-                          Text('The name of Planet shown in above image is ${data.planetName!.toString()}'),
-                          if (isVisible) Text(
-                              'The distance of earth from sun is ${(data.extra!.distanceToSun! - (data.extra!.distanceToSun! - data.extra!.distanceToEarth!)).toString()}'
-                          ),
+                          Text(
+                              'The name of Planet shown in above image is ${data.planetName!.toString()}'),
+                          if (isVisible)
+                            Text(
+                                'The distance of earth from sun is ${(data.extra!.distanceToSun! - (data.extra!.distanceToSun! - data.extra!.distanceToEarth!)).toString()}'),
                           TextButton(
                               onPressed: () {
                                 setState(() {
