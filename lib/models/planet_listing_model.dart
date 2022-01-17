@@ -28,7 +28,7 @@ class PlanetListingModel {
   }
 
   List<Planet> filterPlanetsByMinRadius(List<Planet> planets, double minRadius) {
-    planets.removeWhere((p) => p.radius < minRadius);
+    planets.removeWhere((p) => p.radius > minRadius);
     return planets;
   }
 

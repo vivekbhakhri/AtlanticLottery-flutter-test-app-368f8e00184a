@@ -40,7 +40,7 @@ class _PlanetListingScreenState extends State<PlanetListingScreen> {
                 itemCount: model.planetsList.length,
                 itemBuilder: (context, itemCount){
                   return ListTile(
-                    title:Text('Name=> ${model.planetsList[itemCount].name} - Radius=> ${model.planetsList[itemCount].radius}'),
+                    title:Text('${itemCount + 1} Name=> ${model.planetsList[itemCount].name} :- Radius=> ${model.planetsList[itemCount].radius}'),
                   );
             })
           ),
