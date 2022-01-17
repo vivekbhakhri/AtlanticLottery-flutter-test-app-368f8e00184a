@@ -26,6 +26,8 @@ class HomeWidget extends StatefulWidget {
 
   @override
   State<HomeWidget> createState() => _HomeWidgetState();
+
+
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
@@ -37,6 +39,7 @@ class _HomeWidgetState extends State<HomeWidget> {
     PlanetListingScreen(),
     WebviewScreen(),
   ];
+
 
   void _onItemTapped(int index) {
     setState(() {
@@ -50,8 +53,12 @@ class _HomeWidgetState extends State<HomeWidget> {
       appBar: AppBar(
         title: const Text('ALC Mobile Test App'),
       ),
-      body: Center(
-        child: _screenOptions.elementAt(_selectedIndex),
+      body: Container(
+        child: Center(
+          child: Hero(tag: 'photo',
+          child:_screenOptions.elementAt(_selectedIndex),)
+
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

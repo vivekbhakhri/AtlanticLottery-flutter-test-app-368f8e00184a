@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class WebviewScreen extends StatefulWidget {
   @override
@@ -6,10 +7,12 @@ class WebviewScreen extends StatefulWidget {
 }
 
 class _WebviewScreenState extends State<WebviewScreen> {
+  var loadingPercentage = 0;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('Webview here'),
+    return WebView(
+      initialUrl: 'https://www.alc.ca/content/alc-mobile/en.html',
+      javascriptMode: JavascriptMode.disabled,
     );
   }
 }
